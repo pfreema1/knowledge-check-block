@@ -1,11 +1,19 @@
 import React from 'react';
 
-const SubmitButtonComponent = ({ isClickable }) => {
+const SubmitButtonComponent = ({
+  isClickable,
+  hasClickedSubmit,
+  handleSubmitClick
+}) => {
   return (
     <div
+      onClick={handleSubmitClick}
       className={
         'submit-button ' +
-        (isClickable !== null ? '' : 'submit-button--inactive')
+        (isClickable !== null
+          ? 'submit-button--hoverable '
+          : 'submit-button--inactive ') +
+        (hasClickedSubmit ? 'fade-out' : '')
       }
     >
       SUBMIT

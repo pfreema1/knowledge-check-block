@@ -1,6 +1,19 @@
 import React from 'react';
+import Icon from 'react-icons-kit';
+import { checkmark } from 'react-icons-kit/ionicons/checkmark';
+import { close } from 'react-icons-kit/ionicons/close';
 
-const AnswerComponent = ({ answerStr, handleAnswerClick, index, isChosen }) => {
+//<Icon icon={close} />;
+// <Icon icon={checkmark} />;
+
+const AnswerComponent = ({
+  answerStr,
+  handleAnswerClick,
+  index,
+  isChosen,
+  hasClickedSubmit,
+  isCorrectAnswer
+}) => {
   return (
     <div
       onClick={handleAnswerClick.bind(null, index)}
@@ -10,9 +23,24 @@ const AnswerComponent = ({ answerStr, handleAnswerClick, index, isChosen }) => {
         <div
           className={
             'answer__radio-button--select-indicator ' +
-            (isChosen ? 'show-indicator' : 'hide-indicator')
+            (isChosen && !hasClickedSubmit
+              ? 'show-indicator'
+              : 'hide-indicator')
           }
         />
+        {isCorrectAnswer ? (
+          <Icon
+            size={12}
+            className={'checkmark-icon ' + (hasClickedSubmit ? 'show' : '')}
+            icon={checkmark}
+          />
+        ) : (
+          <Icon
+            size={12}
+            className={'close-icon ' + (hasClickedSubmit ? 'show' : '')}
+            icon={close}
+          />
+        )}
       </div>
       <div className="answer__text">{answerStr}</div>
     </div>

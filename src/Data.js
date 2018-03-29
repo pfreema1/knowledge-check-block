@@ -14,7 +14,7 @@ export const exampleData = {
       question: 'What is the speed of gnar?',
       image: espresso,
       answers: ['10', '11', '42', '38'],
-      correctAnswerIndex: 3,
+      correctAnswerIndex: 2,
       answerReinforcement: '42 is a great number!'
     }
   ]

@@ -33,6 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .answer__radio-button--select-indicator {
@@ -97,8 +98,41 @@
   background: RGBA(117, 122, 125, 1);
   margin: 25px auto;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .submit-button--inactive {
   opacity: 0.5;
+  cursor: auto;
+}
+
+.submit-button--hoverable:hover {
+  background: RGBA(145, 149, 151, 1);
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.checkmark-icon,
+.close-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: opacity 0.5s;
+  opacity: 0;
+  margin-left: 4px;
+}
+
+.checkmark-icon {
+  color: RGBA(136, 141, 143, 1);
+}
+
+.close-icon {
+  color: RGBA(63, 65, 67, 1);
+}
+
+.show {
+  opacity: 1;
 }
