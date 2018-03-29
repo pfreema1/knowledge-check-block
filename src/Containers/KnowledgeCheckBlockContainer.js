@@ -16,6 +16,7 @@ class KnowledgeCheckBlockContainer extends Component {
         <AnswersContainer
           answersArr={questionData.answers}
           correctAnswerIndex={questionData.correctAnswerIndex}
+          answerReinforcementStr={questionData.answerReinforcement}
         />
       </div>
     );

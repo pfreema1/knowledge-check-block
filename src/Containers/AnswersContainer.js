@@ -11,7 +11,8 @@ class AnswerContainer extends Component {
 
     this.state = {
       chosenAnswerIndex: null,
-      hasClickedSubmit: false
+      hasClickedSubmit: false,
+      setSubmitButtonDisplay: false
     };
   }
 
@@ -26,9 +27,23 @@ class AnswerContainer extends Component {
       this.setState({ hasClickedSubmit: true });
   };
 
+  handleSubmitButtonTransitionEnd = () => {
+    if (this.state.hasClickedSubmit) {
+      this.setState({ setSubmitButtonDisplay: true });
+    }
+  };
+
   render() {
-    const { answersArr, correctAnswerIndex } = this.props;
-    const { chosenAnswerIndex, hasClickedSubmit } = this.state;
+    const {
+      answersArr,
+      correctAnswerIndex,
+      answerReinforcementStr
+    } = this.props;
+    const {
+      chosenAnswerIndex,
+      hasClickedSubmit,
+      setSubmitButtonDisplay
+    } = this.state;
 
     const userChoseCorrectAnswer = correctAnswerIndex === chosenAnswerIndex;
 
@@ -52,16 +67,22 @@ class AnswerContainer extends Component {
             );
           })}
         </div>
+        <div>
+          <SubmitButtonComponent
+            handleSubmitClick={this.handleSubmitClick}
+            hasClickedSubmit={hasClickedSubmit}
+            isClickable={chosenAnswerIndex}
+            handleSubmitButtonTransitionEnd={
+              this.handleSubmitButtonTransitionEnd
+            }
+            setSubmitButtonDisplay={setSubmitButtonDisplay}
+          />
 
-        <SubmitButtonComponent
-          handleSubmitClick={this.handleSubmitClick}
-          hasClickedSubmit={hasClickedSubmit}
-          isClickable={chosenAnswerIndex}
-        />
-
-        <AnswerResponseComponent
-          userChoseCorrectAnswer={userChoseCorrectAnswer}
-        />
+          <AnswerResponseComponent
+            userChoseCorrectAnswer={userChoseCorrectAnswer}
+            answerReinforcementStr={answerReinforcementStr}
+          />
+        </div>
       </div>
     );
   }

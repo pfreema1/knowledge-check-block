@@ -134,6 +134,10 @@
   margin-left: 4px;
 }
 
+.set-no-display {
+  display: none;
+}
+
 .checkmark-icon {
   color: RGBA(136, 141, 143, 1);
 }
@@ -188,9 +192,52 @@
   animation-fill-mode: forwards;
 }
 
-/* .correct-answer-outline::before {
-  content: '';
-  width: 0;
-  height: 0;
-  border: 2px solid RGBA(112, 112, 112, 1);
-} */
+.answer-response-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-response__result-feedback-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.answer-response__result-feedback-wrapper p {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.answer-response__result-feedback--icon-wrapper {
+  border: 2px solid RGBA(202, 203, 203, 1);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-response__answer-reinforcement p {
+  font-family: 'Merriweather', serif;
+  color: rgba(112, 112, 112, 1);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.answer-response__take-again-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: RGBA(118, 118, 118, 1);
+  font-size: 10px;
+}
+
+.answer-response__refresh-icon {
+  transform: rotate(200deg) scaleX(-1);
+  color: RGBA(118, 118, 118, 1);
+}

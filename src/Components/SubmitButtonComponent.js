@@ -3,17 +3,21 @@ import React from 'react';
 const SubmitButtonComponent = ({
   isClickable,
   hasClickedSubmit,
-  handleSubmitClick
+  handleSubmitClick,
+  handleSubmitButtonTransitionEnd,
+  setSubmitButtonDisplay
 }) => {
   return (
     <div
+      onTransitionEnd={handleSubmitButtonTransitionEnd}
       onClick={handleSubmitClick}
       className={
         'submit-button ' +
         (isClickable !== null
           ? 'submit-button--hoverable '
           : 'submit-button--inactive ') +
-        (hasClickedSubmit ? 'fade-out' : '')
+        (hasClickedSubmit ? 'fade-out ' : '') +
+        (setSubmitButtonDisplay ? 'set-no-display' : '')
       }
     >
       SUBMIT

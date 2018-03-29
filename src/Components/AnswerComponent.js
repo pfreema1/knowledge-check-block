@@ -3,9 +3,6 @@ import Icon from 'react-icons-kit';
 import { checkmark } from 'react-icons-kit/ionicons/checkmark';
 import { close } from 'react-icons-kit/ionicons/close';
 
-//<Icon icon={close} />;
-// <Icon icon={checkmark} />;
-
 const AnswerComponent = ({
   answerStr,
   handleAnswerClick,
