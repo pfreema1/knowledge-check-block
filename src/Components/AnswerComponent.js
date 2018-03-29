@@ -17,7 +17,10 @@ const AnswerComponent = ({
   return (
     <div
       onClick={handleAnswerClick.bind(null, index)}
-      className="single-answer-wrapper"
+      className={
+        'single-answer-wrapper ' +
+        (hasClickedSubmit ? 'no-click' : 'single-answer-wrapper--hover-class')
+      }
     >
       <div className="answer__radio-button">
         <div
@@ -31,18 +34,30 @@ const AnswerComponent = ({
         {isCorrectAnswer ? (
           <Icon
             size={12}
-            className={'checkmark-icon ' + (hasClickedSubmit ? 'show' : '')}
+            className={
+              'checkmark-icon ' + (hasClickedSubmit ? 'show-with-delay' : '')
+            }
             icon={checkmark}
           />
         ) : (
           <Icon
             size={12}
-            className={'close-icon ' + (hasClickedSubmit ? 'show' : '')}
+            className={
+              'close-icon ' + (hasClickedSubmit ? 'show-with-delay' : '')
+            }
             icon={close}
           />
         )}
       </div>
       <div className="answer__text">{answerStr}</div>
+      {isChosen && (
+        <span
+          className={
+            'correct-answer-outline ' +
+            (hasClickedSubmit ? 'correct-answer-outline-anim' : '')
+          }
+        />
+      )}
     </div>
   );
 };
