@@ -1,0 +1,6 @@
+.radio-button {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  border: 1px solid RGBA(117, 122, 125, 1);
+}
