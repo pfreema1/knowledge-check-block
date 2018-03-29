@@ -4,7 +4,8 @@ const SubmitButtonComponent = ({ isClickable }) => {
   return (
     <div
       className={
-        'submit-button ' + (isClickable ? '' : 'submit-button--inactive')
+        'submit-button ' +
+        (isClickable !== null ? '' : 'submit-button--inactive')
       }
     >
       SUBMIT

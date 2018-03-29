@@ -9,30 +9,37 @@ class AnswerContainer extends Component {
     super(props);
 
     this.state = {
-      hasChosenAnswer: false
+      chosenAnswerIndex: null
     };
   }
 
-  handleAnswerClick = () => {};
+  handleAnswerClick = index => {
+    // console.log('index clicked:  ', index);
+
+    this.setState({ chosenAnswerIndex: index });
+  };
 
   render() {
     const { answersArr } = this.props;
-    const { hasChosenAnswer } = this.state;
+    const { chosenAnswerIndex } = this.state;
 
     return (
       <div>
         <div className="answers-wrapper">
           {answersArr.map((answer, index) => {
+            let isChosen = chosenAnswerIndex === index;
             return (
               <AnswerComponent
                 key={index}
+                index={index}
                 answerStr={answer}
                 handleAnswerClick={this.handleAnswerClick}
+                isChosen={isChosen}
               />
             );
           })}
         </div>
-        <SubmitButtonComponent isClickable={hasChosenAnswer} />
+        <SubmitButtonComponent isClickable={chosenAnswerIndex} />
       </div>
     );
   }

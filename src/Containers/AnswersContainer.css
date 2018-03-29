@@ -17,6 +17,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .single-answer-wrapper:hover {
@@ -24,11 +25,63 @@
 }
 
 .answer__radio-button {
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   border: 1px solid RGBA(117, 122, 125, 1);
   margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer__radio-button--select-indicator {
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
+  background: RGBA(117, 122, 125, 1);
+  transition: all 0.5s;
+  /* opacity: 1; */
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes show-indicator-anim {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-indicator-anim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.show-indicator {
+  animation: show-indicator-anim 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.hide-indicator {
+  animation: hide-indicator-anim 0.3s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .submit-button {
