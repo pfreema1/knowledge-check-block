@@ -1,0 +1,49 @@
+.answers-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.single-answer-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.single-answer-wrapper:first-of-type {
+  margin-top: 10px;
+}
+
+.single-answer-wrapper:hover {
+  background: RGBA(247, 247, 248, 1);
+}
+
+.answer__radio-button {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 1px solid RGBA(117, 122, 125, 1);
+  margin-right: 40px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  background: RGBA(117, 122, 125, 1);
+  margin: 25px 0;
+}

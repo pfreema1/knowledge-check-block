@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AnswerContainer from './Containers/AnswerContainer';
 import KnowledgeCheckBlockContainer from './Containers/KnowledgeCheckBlockContainer';
 import { exampleData as data } from './Data';
 
@@ -10,9 +9,7 @@ class App extends Component {
         {data.questions.map((question, index) => {
           return (
             <div key={index}>
-              <KnowledgeCheckBlockContainer questionData={question}>
-                <AnswerContainer />
-              </KnowledgeCheckBlockContainer>
+              <KnowledgeCheckBlockContainer questionData={question} />
             </div>
           );
         })}
