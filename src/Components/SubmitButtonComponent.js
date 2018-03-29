@@ -1,7 +1,15 @@
 import React from 'react';
 
-const SubmitButtonComponent = () => {
-  return <div className="submit-button">SUBMIT</div>;
+const SubmitButtonComponent = ({ isClickable }) => {
+  return (
+    <div
+      className={
+        'submit-button ' + (isClickable ? '' : 'submit-button--inactive')
+      }
+    >
+      SUBMIT
+    </div>
+  );
 };
 
 export default SubmitButtonComponent;

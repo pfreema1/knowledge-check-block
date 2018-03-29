@@ -17,6 +17,9 @@ it('renders without crashing', () => {
 
 describe('the app', () => {
   const numOfQuestions = data.questions.length;
+  const numOfAnswers = data.questions.reduce((prevVal, question) => {
+    return question.answers.length + prevVal;
+  }, 0);
 
   it('should render the correct amount of questions', () => {
     const wrapper = mount(<App />);
@@ -26,8 +29,6 @@ describe('the app', () => {
   });
 
   it('each QuestionComponent should receive at least one question string or image', () => {
-    // console.log(data.questions);
-
     expect(
       data.questions.find(questionEl => {
         if (questionEl.question === null && questionEl.image === null) {
@@ -35,5 +36,10 @@ describe('the app', () => {
         }
       })
     ).toBeUndefined();
+  });
+
+  it('should render correct amount of answers', () => {
+    const wrapper = mount(<App />);
+    expect(wrapper.find('.single-answer-wrapper').length).toBe(numOfAnswers);
   });
 });
