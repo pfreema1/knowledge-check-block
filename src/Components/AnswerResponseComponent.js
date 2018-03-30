@@ -4,11 +4,10 @@ import { close } from 'react-icons-kit/ionicons/close';
 import { checkmark } from 'react-icons-kit/ionicons/checkmark';
 import { iosRefreshEmpty } from 'react-icons-kit/ionicons/iosRefreshEmpty';
 
-// <Icon icon={iosRefreshEmpty} />;
-
 const AnswerResponseComponent = ({
   userChoseCorrectAnswer,
-  answerReinforcementStr
+  answerReinforcementStr,
+  handleTakeAgainClick
 }) => {
   return (
     <div className="answer-response-wrapper">
@@ -29,7 +28,10 @@ const AnswerResponseComponent = ({
       <div className="answer-response__answer-reinforcement">
         <p>{answerReinforcementStr}</p>
       </div>
-      <div className="answer-response__take-again-wrapper">
+      <div
+        onClick={handleTakeAgainClick}
+        className="answer-response__take-again-wrapper"
+      >
         <Icon
           className="answer-response__refresh-icon"
           size={30}

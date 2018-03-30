@@ -139,11 +139,11 @@
 }
 
 .checkmark-icon {
-  color: RGBA(136, 141, 143, 1);
+  color: RGBA(136, 141, 143, 0.8);
 }
 
 .close-icon {
-  color: RGBA(63, 65, 67, 1);
+  color: RGBA(63, 65, 67, 0.8);
 }
 
 .show-with-delay {

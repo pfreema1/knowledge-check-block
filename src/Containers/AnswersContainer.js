@@ -17,8 +17,6 @@ class AnswerContainer extends Component {
   }
 
   handleAnswerClick = index => {
-    // console.log('index clicked:  ', index);
-
     this.setState({ chosenAnswerIndex: index });
   };
 
@@ -31,6 +29,14 @@ class AnswerContainer extends Component {
     if (this.state.hasClickedSubmit) {
       this.setState({ setSubmitButtonDisplay: true });
     }
+  };
+
+  handleTakeAgainClick = () => {
+    this.setState({
+      chosenAnswerIndex: null,
+      hasClickedSubmit: false,
+      setSubmitButtonDisplay: false
+    });
   };
 
   render() {
@@ -76,6 +82,7 @@ class AnswerContainer extends Component {
             <AnswerResponseComponent
               userChoseCorrectAnswer={userChoseCorrectAnswer}
               answerReinforcementStr={answerReinforcementStr}
+              handleTakeAgainClick={this.handleTakeAgainClick}
             />
           )}
 
