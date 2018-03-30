@@ -108,8 +108,6 @@
   margin: 25px auto;
   transition: all 0.5s;
   cursor: pointer;
-
-  /* position: absolute; */
 }
 
 .submit-button--inactive {
@@ -204,16 +202,21 @@
 
 @keyframes animate-response-height-anim {
   0% {
-    height: 0px;
+    height: 40px;
   }
   100% {
     height: 230px;
   }
 }
 
+.foo {
+  height: 40px;
+}
+
 .animate-response-height {
   animation: animate-response-height-anim 0.5s;
   animation-fill-mode: forwards;
+  animation-delay: 0.5s;
 }
 
 .answer-response__result-feedback-wrapper {
@@ -221,6 +224,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 5px;
 }
 
 .answer-response__result-feedback-wrapper p {
@@ -228,6 +232,23 @@
   font-weight: 700;
   margin-top: 8px;
   letter-spacing: 0.24px;
+  opacity: 0;
+  transform: translateY(1.2);
+  animation: fade-in-and-scale-feedback-icon-anim 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-and-scale-feedback-icon-anim {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .answer-response__result-feedback--icon-wrapper {
@@ -238,6 +259,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translateY(1.2);
+  animation: fade-in-and-scale-feedback-icon-anim 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-move-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
 }
 
 .answer-response__answer-reinforcement p {
@@ -245,6 +282,21 @@
   color: rgba(112, 112, 112, 1);
   font-size: 14px;
   font-weight: 300;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fade-in-move-up 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fade-in-anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .answer-response__take-again-wrapper {
@@ -255,6 +307,11 @@
   font-size: 10px;
   margin: 30px 0;
   letter-spacing: 0.8px;
+  opacity: 0;
+  animation: fade-in-anim 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  cursor: pointer;
 }
 
 .answer-response__refresh-icon {

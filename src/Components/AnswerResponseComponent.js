@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from 'react-icons-kit';
 import { close } from 'react-icons-kit/ionicons/close';
+import { checkmark } from 'react-icons-kit/ionicons/checkmark';
 import { iosRefreshEmpty } from 'react-icons-kit/ionicons/iosRefreshEmpty';
 
 // <Icon icon={iosRefreshEmpty} />;
@@ -10,12 +11,20 @@ const AnswerResponseComponent = ({
   answerReinforcementStr
 }) => {
   return (
-    <div className="answer-response-wrapper animate-response-height">
+    <div className="answer-response-wrapper">
       <div className="answer-response__result-feedback-wrapper">
         <div className="answer-response__result-feedback--icon-wrapper">
-          <Icon size={20} icon={close} />
+          {userChoseCorrectAnswer ? (
+            <Icon
+              style={{ color: 'RGBA(119, 124, 127, 1.00)' }}
+              size={20}
+              icon={checkmark}
+            />
+          ) : (
+            <Icon size={20} icon={close} />
+          )}
         </div>
-        <p>Incorrect</p>
+        {userChoseCorrectAnswer ? <p>Correct</p> : <p>Incorrect</p>}
       </div>
       <div className="answer-response__answer-reinforcement">
         <p>{answerReinforcementStr}</p>

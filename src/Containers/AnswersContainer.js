@@ -67,7 +67,18 @@ class AnswerContainer extends Component {
             );
           })}
         </div>
-        <div>
+        <div
+          className={
+            'foo ' + (hasClickedSubmit ? 'animate-response-height' : '')
+          }
+        >
+          {setSubmitButtonDisplay && (
+            <AnswerResponseComponent
+              userChoseCorrectAnswer={userChoseCorrectAnswer}
+              answerReinforcementStr={answerReinforcementStr}
+            />
+          )}
+
           <SubmitButtonComponent
             handleSubmitClick={this.handleSubmitClick}
             hasClickedSubmit={hasClickedSubmit}
@@ -77,13 +88,6 @@ class AnswerContainer extends Component {
             }
             setSubmitButtonDisplay={setSubmitButtonDisplay}
           />
-
-          {hasClickedSubmit && (
-            <AnswerResponseComponent
-              userChoseCorrectAnswer={userChoseCorrectAnswer}
-              answerReinforcementStr={answerReinforcementStr}
-            />
-          )}
         </div>
       </div>
     );
