@@ -20,6 +20,7 @@ body {
   font-family: 'Merriweather', serif;
   font-size: 17px;
   /* margin: 5px 0; */
+  color: RGBA(50, 53, 55, 0.9);
 }
 
 .question__wrapper p {

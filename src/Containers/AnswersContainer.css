@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 100%;
   margin: 10px 0 70px 0;
+  color: RGBA(50, 53, 55, 0.9);
 }
 
 .single-answer-wrapper {
@@ -100,7 +101,7 @@
   align-items: center;
   width: 170px;
   height: 40px;
-  color: white;
+  color: RGBA(255, 255, 255, 0.8);
   border-radius: 20px;
   font-size: 12px;
   font-weight: 700;
