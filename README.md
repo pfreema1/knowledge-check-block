@@ -16,7 +16,7 @@ Coffee ☕️
 
 ## Enhancements from Original
 
-![ui bug](http://paulfreeman.design/ui-bug-in-original.png)
+![ui bug](https://s3-us-west-2.amazonaws.com/s.cdpn.io/1090239/ui-bug-in-original.png)
 
 **UI bug** - the original has a minor UI bug where the top of the feedback icon is cut off at the start of the animation. The version here does not.
 
