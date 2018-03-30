@@ -13,7 +13,7 @@ const AnswerComponent = ({
 }) => {
   return (
     <div
-      onClick={handleAnswerClick.bind(null, index)}
+      onClick={!hasClickedSubmit ? handleAnswerClick.bind(null, index) : ''}
       className={
         'single-answer-wrapper ' +
         (hasClickedSubmit ? 'no-click' : 'single-answer-wrapper--hover-class')
