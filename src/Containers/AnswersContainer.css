@@ -37,6 +37,8 @@
 .answer__radio-button {
   height: 20px;
   width: 20px;
+  min-height: 20px;
+  min-width: 20px;
   border-radius: 50%;
   border: 1px solid RGBA(117, 122, 125, 1);
   margin-right: 40px;
@@ -288,6 +290,8 @@
   animation: fade-in-move-up 0.5s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
+  text-align: center;
+  line-height: 23.8px;
 }
 
 @keyframes fade-in-anim {
