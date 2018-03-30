@@ -10,7 +10,7 @@ const AnswerResponseComponent = ({
   answerReinforcementStr
 }) => {
   return (
-    <div className="answer-response-wrapper">
+    <div className="answer-response-wrapper animate-response-height">
       <div className="answer-response__result-feedback-wrapper">
         <div className="answer-response__result-feedback--icon-wrapper">
           <Icon size={20} icon={close} />

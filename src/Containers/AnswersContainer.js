@@ -78,10 +78,12 @@ class AnswerContainer extends Component {
             setSubmitButtonDisplay={setSubmitButtonDisplay}
           />
 
-          <AnswerResponseComponent
-            userChoseCorrectAnswer={userChoseCorrectAnswer}
-            answerReinforcementStr={answerReinforcementStr}
-          />
+          {hasClickedSubmit && (
+            <AnswerResponseComponent
+              userChoseCorrectAnswer={userChoseCorrectAnswer}
+              answerReinforcementStr={answerReinforcementStr}
+            />
+          )}
         </div>
       </div>
     );
